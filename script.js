@@ -15,7 +15,6 @@ let favorites = {}
 
 const createDOMNodes = (page) => {
     const currentArray = page === "results" ? resultsArray : Object.values(favorites)
-    console.log("current array", page, currentArray)
     currentArray.forEach((result) => {
         // card container
         const card = document.createElement("div")
@@ -92,7 +91,6 @@ const updateDOM = (page) => {
     // get favorites from local storage
     if (localStorage.getItem("nasaFavorites")) {
         favorites = JSON.parse(localStorage.getItem("nasaFavorites"))
-        console.log("favorites form localStorage", favorites)
     }
     imagesContainer.textContent = ""
     createDOMNodes(page)
@@ -103,10 +101,9 @@ const getNasaPictures = async () => {
     try {
         const response = await fetch(apiUrl)
         resultsArray = await response.json()
-        updateDOM("resultsArray")
+        updateDOM("results")
     } catch (error) {
         // catch error here
-        console.log(error)
     }
 }
 
