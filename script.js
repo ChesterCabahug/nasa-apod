@@ -61,6 +61,18 @@ const updateDOM = () => {
 
         const copyright = document.createElement("span")
         copyright.textContent = ` ${result.copyright}`
+
+
+
+
+
+        // append everything in order
+        footer.append(date, copyright)
+        cardBody.append(cardTitle,saveText,  cardText, footer)
+        link.appendChild(image)
+        card.append(link, cardBody)
+
+        imagesContainer.appendChild(card)
     })
 }
 
