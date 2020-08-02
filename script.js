@@ -98,7 +98,7 @@ const getNasaPictures = async () => {
 const saveFavorite = (itemUrl) => {
     // loop through Results Array to select favorite
     resultsArray.forEach((item) => {
-        if(item.url.includes(itemUrl)) {
+        if(item.url.includes(itemUrl) && !favorites[itemUrl]) {
             favorites[itemUrl] = item
             console.log(favorites)
 
