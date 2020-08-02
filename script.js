@@ -94,6 +94,7 @@ const updateDOM = (page) => {
         favorites = JSON.parse(localStorage.getItem("nasaFavorites"))
         console.log("favorites form localStorage", favorites)
     }
+    imagesContainer.textContent = ""
     createDOMNodes(page)
 }
 
@@ -102,7 +103,7 @@ const getNasaPictures = async () => {
     try {
         const response = await fetch(apiUrl)
         resultsArray = await response.json()
-        updateDOM("favorites")
+        updateDOM("resultsArray")
     } catch (error) {
         // catch error here
         console.log(error)
