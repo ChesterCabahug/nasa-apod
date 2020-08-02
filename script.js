@@ -100,13 +100,15 @@ const saveFavorite = (itemUrl) => {
     resultsArray.forEach((item) => {
         if(item.url.includes(itemUrl) && !favorites[itemUrl]) {
             favorites[itemUrl] = item
-            console.log(favorites)
 
             // show save confirmation for 2 sec
             saveConfirmed.hidden = false
             setTimeout(() => {
                 saveConfirmed.hidden = true
             }, 2000);
+
+            // set favorites in local storage
+            localStorage.setItem("nasaFavorites", JSON.stringify(favorites))
         }
     })
 }
