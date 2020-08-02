@@ -47,8 +47,14 @@ const createDOMNodes = (page) => {
         // save text
         const saveText = document.createElement("p")
         saveText.classList.add("clickable")
-        saveText.textContent = "Add to Favorites"
-        saveText.setAttribute("onclick", `saveFavorite("${result.url}")`)
+        if (page === "results") {
+            saveText.textContent = "Add to Favorites"
+            saveText.setAttribute("onclick", `saveFavorite("${result.url}")`)
+        } else {
+            saveText.textContent = "Remove Favorite"
+            saveText.setAttribute("onclick", `removeFavorite("${result.url}")`)
+        }
+        
 
         // card text
         const cardText = document.createElement("p")
