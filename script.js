@@ -96,7 +96,19 @@ const getNasaPictures = async () => {
 
 // add result to favorites
 const saveFavorite = (itemUrl) => {
-    console.log(itemUrl)
+    // loop through Results Array to select favorite
+    resultsArray.forEach((item) => {
+        if(item.url.includes(itemUrl)) {
+            favorites[itemUrl] = item
+            console.log(favorites)
+
+            // show save confirmation for 2 sec
+            saveConfirmed.hidden = false
+            setTimeout(() => {
+                saveConfirmed.hidden = true
+            }, 2000);
+        }
+    })
 }
 
 
