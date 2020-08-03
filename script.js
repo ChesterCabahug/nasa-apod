@@ -16,13 +16,13 @@ let favorites = {}
 const showContent = (page) => {
     window.scrollTo({top: 0, behavior: "instant"})
     loader.classList.add("hidden")
-    if (page === 'results') {
-        resultsNav.classList.remove('hidden');
-        favoritesNav.classList.add('hidden');
-      } else {
-        resultsNav.classList.add('hidden');
-        favoritesNav.classList.remove('hidden');
-      }
+    if (page === "results") {
+        resultsNav.classList.remove("hidden")
+        favoritesNav.classList.add("hidden")
+    } else {
+        resultsNav.classList.add("hidden")
+        favoritesNav.classList.remove("hidden")
+    }
 }
 
 const createDOMNodes = (page) => {
